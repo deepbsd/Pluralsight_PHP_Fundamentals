@@ -92,13 +92,43 @@ $length = strlen($somequote);
 
 echo "How long? ".$length." characters long.\n";
 
+///////////////////////////////////////////
+//  string position
+///////////////////////////////////////////
+
+
+$goodquote = "Courage is resistance to fear, mastery of fear, not absence of fear.\n";
+
+# note, two arguments.  also, only returns first position index
+echo strpos($goodquote, "fear")."\n";
+
+# can also use a 3rd parameter, the position number to start looking after
+echo strpos($goodquote, "fear", 26)."\n";
+
+# what about if the search string doesn't exist?  returns empty string
+echo strpos($goodquote, "barbeque")."\n";
 
 
 
+///////////////////////////////////////////
+//  string replace
+///////////////////////////////////////////
 
 
+# notice the underscore value in this method
+$replaced = str_replace("absence", "disappearance", $goodquote, $count);
+
+echo $replaced . "\n";
+
+# notice str_replace has FOUR parameters (4th is optional) how many times
+# replacements happened.
+
+echo $count." replacement(s) occurred.\n";
 
 
+///////////////////////////////////////////
+//  sub strings
+///////////////////////////////////////////
 
 
 
