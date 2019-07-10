@@ -130,6 +130,15 @@ echo $count." replacement(s) occurred.\n";
 //  sub strings
 ///////////////////////////////////////////
 
+$quote = "Only those who will risk going too far can possibly find out how far one can go.";
+
+// example of multiple arguments with echo
+echo strtoupper("First four characters: ").substr($quote, 4)."\n";  // remote 'Only'
+echo strtoupper("last three characters: ").substr($quote, -3)."\n";  // last word of string 'go.'
+echo strtoupper("indexes 20 + 18: ").substr($quote, 20, 18)."\n";
+
+
+
 
 
 
