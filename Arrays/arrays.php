@@ -110,6 +110,36 @@ print_r($reading_list);
 
 
 
+////////////////////////////////////////////////////////
+//   sorting arrays
+////////////////////////////////////////////////////////
+
+
+$books = array(
+    "The Book of Ruby",
+    "Eloquent Javascript",
+    "Python Pocket Reference"
+);
+
+$book_order = array(
+    "python" => "Python Pocket Reference",
+    "ruby" => "The Book Of Ruby",
+    "javascript" => "Eloquent Javascript"
+);
+
+# sort the indexed array:
+sort($books);
+echo "Sorted indexed array: \n";
+print_r($books);
+
+# NOTE:  DO NOT USE sort() ON ASSOC ARRAYS!  The keys become indexes!!!!!
+
+# USE asort() to sort associative arrays!!!
+
+asort($book_order);
+echo "Sorted associative array: \n";
+print_r($book_order);
+
 
 
 
