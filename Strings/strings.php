@@ -130,15 +130,41 @@ echo $count." replacement(s) occurred.\n";
 //  sub strings
 ///////////////////////////////////////////
 
-$quote = "Only those who will risk going too far can possibly find out how far one can go.";
+$nicequote = "Only those who will risk going too far can possibly find out how far one can go.";
+
 
 // example of multiple arguments with echo
-echo strtoupper("First four characters: ").substr($quote, 4)."\n";  // remote 'Only'
-echo strtoupper("last three characters: ").substr($quote, -3)."\n";  // last word of string 'go.'
-echo strtoupper("indexes 20 + 18: ").substr($quote, 20, 18)."\n";
+echo strtoupper("First four characters: ").substr($nicequote, 4)."\n";  // remote 'Only'
+echo strtoupper("last three characters: ").substr($nicequote, -3)."\n";  // last word of string 'go.'
+echo strtoupper("indexes 20 + 18: ").substr($nicequote, 20, 18)."\n";
+echo strtoupper("indexes 20 - 3: ").substr($nicequote, 20, -3)."\n";
 
 
+///////////////////////////////////////////
+//  string split
+///////////////////////////////////////////
 
+$truth = "It is a melancholy truth that even great men have their poor relations.";
+
+$myArr = str_split($truth);
+$myArr2 = explode(" ", $truth);
+
+
+echo strtoupper("Using split: ");
+print_r($myArr)."\n";
+echo strtoupper("Using explode: ");
+print_r($myArr2)."\n";
+
+
+///////////////////////////////////////////
+//  explode
+///////////////////////////////////////////
+
+
+$cars = "camero,mustang,challenger,carerra";
+list($chevy, $ford, $dodge, $porsche) = explode(",", $cars);
+
+echo strtoupper("Cars: ")."Chevy: ".$chevy." Ford: ".$ford." Dodge: ".$dodge." Porsche: ".$porsche."\n";
 
 
 
