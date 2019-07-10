@@ -140,6 +140,69 @@ asort($book_order);
 echo "Sorted associative array: \n";
 print_r($book_order);
 
+# rsort() the array
+arsort($book_order);  // change from previous version of sort...
+echo "Reverse sorted (arsort()): \n";
+print_r($book_order);
+# ksort() to sort by keys on associative array
+
+ksort($book_order);
+echo "ksorted \$book_order variable: \n";
+print_r($book_order);
+
+# QUESTION:  is there a non-mutate version of sorting an array?
+
+# SORTING TYPE: 0-5
+#   0 = SORT_REGULAR - Default (compare items normally)
+#   1 = SORT_NUMERIC - compare items numerically
+#   2 = SORT_STRING - Compare items as strings
+#   3 = SORT_LOCALE_STRING - compare as strings based on current locale
+#   4 = SORT_NATURAL - Compare as strings using natural ordering
+#   5 = SORT_FLAG_CASE - 
+
+
+////////////////////////////////////////////////////////
+//   count()
+////////////////////////////////////////////////////////
+
+#  No nested arrays in this one
+echo "There are ".count($book_order)." elements in the book_order array. \n";
+
+# now we have nested arrays
+
+$more_authors = [
+    "Male" => array(
+        "Charles Dickens" => array("A Christmas Carol", "Oliver Twist"),
+        "Saul Bellow" => array("The Dean's December", "Herzog", "The Adventures of Augie March"),
+        "Mark Twain"  => array("Tom Sawyer", "Huck Finn")
+    ),
+    "Female" => array(
+        "Jane Austin" => array("Jane Eyre", "Emma"),
+        "Virginia Woolfe" => array("A Room of One's Own", "To The Lighthouse")
+    )
+];
+
+echo "Here's the array WITHOUT recursive counting turned on: ".count($more_authors)."\n";
+#  if we run count() with 1 flag, that says "Count Recursive"
+echo "Now we're counting recursively through this array: \n";
+print_r($more_authors);
+echo "And here's the count of all the elements, including sub_elements: ".count($more_authors, 1)."\n";
+echo "You can also use COUNT_RECURSIVE as 2nd argument: ".count($more_authors, COUNT_RECURSIVE)."\n";
+
+
+////////////////////////////////////////////////////////
+//   foreach()
+////////////////////////////////////////////////////////
+
+echo "Here is the \$book_order array: \n";
+print_r($book_order);
+
+echo "Now let's iterate through them: \n";
+foreach($book_order as $key => $value)
+{
+    echo sprintf("Language:   %-10s     Book:   %10s \n",$key,$value);
+}
+
 
 
 
