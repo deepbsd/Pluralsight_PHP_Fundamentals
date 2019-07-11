@@ -61,7 +61,7 @@ class coder {
     public $firstname;
     public $lastname;
     public $editor;
-    public $callsign;
+    private $callsign;
 
     function __construct($firstname="first",$lastname="last",$editor="nano",$callsign=""){
         $this->firstname = $firstname;
@@ -73,7 +73,7 @@ class coder {
 
     # do we need 'public' in front of methods?
     public function getName(){
-        return $this->firstname." ".$this->lastname." and I love ".$this->editor."!\n";
+        return $this->firstname." ".$this->lastname." and I love ".$this->editor.", callsign ".$this->callsign."!\n";
     }
     public function setName($first,$last){
         $this->firstname = $first;
@@ -99,7 +99,7 @@ class powerCoder extends coder {
         array_push($this->languages, $lang);
     }
     public function getLanguages(){
-        return print implode(", ",$this->languages);
+        return implode(", ",$this->languages);
     }
 
 }
@@ -107,7 +107,18 @@ class powerCoder extends coder {
 $scotty = new powerCoder("Scotty","Devy","Vim","Scotty");
 print_r($scotty);
 $scotty->addLanguage("PHP");
+echo $scotty->getName()."\n";
 echo $scotty->getLanguages()."\n";
+
+
+/////////////////////////////////////////////////////
+//   NOTE: private funcs and attributes
+//   DO NOT get inherited
+//   protected funcs and attributes DO get inherited
+/////////////////////////////////////////////////////
+
+
+
 
 
 
