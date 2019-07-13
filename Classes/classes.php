@@ -92,7 +92,12 @@ print_r($dave);
 
 # Not sure how to deal with arrays in class props
 
+////////////////////////////////////////////////////
+//     Static properties
+////////////////////////////////////////////////////
+
 class powerCoder extends coder {
+    public static $favOS = "UNIX";
     public $languages = ["javascript"];
 
     public function addLanguage($lang){
@@ -100,6 +105,10 @@ class powerCoder extends coder {
     }
     public function getLanguages(){
         return implode(", ",$this->languages);
+    }
+    public static function getFavOS(){
+        // Sometimes we might use *parent* instead of *self*
+        return "My favorite OS is ".self::$favOS."!!\n";   // Use *self* here
     }
 
 }
@@ -117,7 +126,8 @@ echo $scotty->getLanguages()."\n";
 //   protected funcs and attributes DO get inherited
 /////////////////////////////////////////////////////
 
-
+// Can use either instance ($scotty) or class itself (powerCoder)
+echo $scotty->getfavOS()."\n";
 
 
 
