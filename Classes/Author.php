@@ -12,13 +12,16 @@ class Author extends Person {
     }
 
     public function getTitles(){
-        return implode(", ", $this->books);
+        return "The titles are ".implode(", ", $this->books);
     }
 
 }
 
 $saul = new Author("Saul","Bellow",1915,"en");
 $saul->addTitle("The Adventures of Auggie March");
+$saul->addTitle("The Dean's December");
+$saul->addTitle("Herzog");
+$saul->addTitle("Humbolt's Gift");
 echo $saul->getTitles()."\n";
 
 
