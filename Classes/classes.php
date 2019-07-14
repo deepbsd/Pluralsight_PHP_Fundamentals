@@ -4,7 +4,7 @@
 //
 //   Note: no $ in front of attribute name after ->
 
-class Person {
+class Writer {
   const AVG_LIFE_SPAN = 79;
 
   public $firstName = "Samuel";
@@ -32,7 +32,7 @@ class Person {
 /////////////////////////////
 
 
-$myObject = new Person();
+$myObject = new Writer();
 
 echo "Before the change: ".$myObject->firstName."\n";
 
@@ -42,7 +42,7 @@ $myObject->firstName = "Samuel Langhorne";
 
 echo "After the change: ".$myObject->firstName."\n";
 
-echo "Accessing a non public constant of a class".$myObject::AVG_LIFE_SPAN."\n";
+echo "Accessing a non public constant of a class:  ".$myObject::AVG_LIFE_SPAN."\n";
 
 
 # Set the value of firstName
@@ -128,6 +128,17 @@ echo $scotty->getLanguages()."\n";
 
 // Can use either instance ($scotty) or class itself (powerCoder)
 echo $scotty->getfavOS()."\n";
+
+
+/////////////////////////////////////////////////////
+//     require vs include:  include keeps going if it
+//     cannot find the file.  require throws an error
+//     and halts if it cannot find the file
+//////////////////////////////////////////////////////
+
+
+
+
 
 
 
