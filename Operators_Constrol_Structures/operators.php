@@ -96,6 +96,7 @@ echo "\n-1 means left side value is less than, 0 means left/right values are equ
 
 //     &&   and   ||   or   
 
+//   !   'not' logical operator   This operator omvents the value
 
 
 
