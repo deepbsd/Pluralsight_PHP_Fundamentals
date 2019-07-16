@@ -191,6 +191,8 @@ echo "Playing condition equals: ".$play_outside." because we have ".$inches_rain
 
 
 // This operator means:   If $var is defined, use its value, otherwise set the default value to what's after the ??
+//
+// It's like using isset($var)   with a ternary operator.  It's shorthand for that
 
 // Example
 
@@ -225,6 +227,40 @@ $d = "now";
 echo $a ?? $c ?? $e ?? $b." ".$d;
 
 echo PHP_EOL;
+
+
+
+
+////////////////////////////////////////////////////////
+//    For    While   (with alternative syntax)
+////////////////////////////////////////////////////////
+
+
+$count = 0;
+
+while ($count < 10){
+    echo "While loop: ".$count.PHP_EOL;
+    $count++;
+}
+
+for($count=0; $count<10; $count++){
+    echo "For loop: ".$count.PHP_EOL;
+}
+
+//  alternative syntax
+
+# replace  braces with : and 'endwhile' or 'endfor'
+
+for ($count=0; $count<10; $count++):
+    if ($count % 2 === 0) :
+        echo "Even number!\n";
+    else: 
+        echo "Odd number!\n";
+    endif;
+endfor;
+
+
+
 
 
 
